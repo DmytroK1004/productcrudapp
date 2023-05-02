@@ -55,6 +55,7 @@ public class MainController {
 	
 	@RequestMapping("/update/{productId}")
 	public String updateProduct(@PathVariable("productId")int pid, Model model) {
+		model.addAttribute("title","Update Product");
 		Product product = this.productDao.getProduct(pid);
 		model.addAttribute("product", product);
 		return "update_product";
